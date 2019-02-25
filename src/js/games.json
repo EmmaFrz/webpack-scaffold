@@ -1,0 +1,16 @@
+{
+	"juegos":[
+		{
+			"name":"Uncharted",
+			"age": "2012"
+		},
+		{
+			"name":"Metal Gear Solid 4",
+			"age":"2020"
+		},
+		{
+			"name":"Mario Bros",
+			"age":"1990"
+		}
+	]
+}
