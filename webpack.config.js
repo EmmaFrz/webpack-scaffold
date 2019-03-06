@@ -23,8 +23,7 @@ module.exports = {
 	*/
 	'entry':{
 		'vendor':['react','react-dom'],
-		'index':'./src/js/index.js',
-		'about': './src/js/about.js'
+		'home':'./src/js/home.js',
 	},
 	//elige la salida del archivo js
 	'output':{
