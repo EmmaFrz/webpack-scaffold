@@ -32,10 +32,12 @@
     "url-loader": "^1.1.2",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.2.0"
+    "webpack-dev-server": "^3.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.3.4"
   },
   "dependencies": {
     "@babel/runtime": "^7.3.1",
+    "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3"
   }
