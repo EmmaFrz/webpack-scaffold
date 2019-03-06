@@ -23,15 +23,15 @@ module.exports = {
 	*/
 	'entry':{
 		'vendor':['react','react-dom'],
-		'index':'./src/js/index.js',
-		'about': './src/js/about.js'
+		'home':'./src/js/home.js',
 	},
 	//elige la salida del archivo js
 	'output':{
 		//elige el nombre y ruta del archivo js
 		'filename':'js/[name].js',
-		'chunkFilename':'js/[id].[chunkhash].js'
+		'chunkFilename':'js/[name].js'
 	},
+	'devtool': 'eval-source-map',
 	//Los modulos utilizados para trabajar dentro del webpack
 	'module':{
 		// Los archivos globales se llaman con la espresion regular "/\.extension$/ 
@@ -59,7 +59,7 @@ module.exports = {
 					'options':{
 						'limit':100000,
 						'outputPath':'images',
-						'name':'[name][hash].[ext]'
+						'name':'[name].[ext]'
 					}
 				}
 			},
@@ -68,12 +68,7 @@ module.exports = {
 				//una ruta dentro de dist, para más enfasis en el plugin, arriba más info
 				'test':/\.css$/,
 				'use':
-				[{
-					'loader':MiniCssExtractPlugin.loader,
-					'options':{
-						'minimize':true
-					}
-				},'css-loader']
+				['style-loader','css-loader']
 			},
 			{
 				// Transpilador de codigo SASS a css e importado a una carpeta css dentro de dist
@@ -82,10 +77,7 @@ module.exports = {
 				'test':/\.scss$/,
 				'use':
 				[{
-					'loader':MiniCssExtractPlugin.loader,
-					'options':{
-						'minimize':true
-					}
+					'loader':MiniCssExtractPlugin.loader
 				},'css-loader','sass-loader']
 			}
 		]
@@ -110,9 +102,6 @@ module.exports = {
 					'enforce':true
 				}
 			}
-		},
-		'minimizer':[
-			new OptimizeCSSAssetsPlugin({})
-		]
+		}
 	}
 }
